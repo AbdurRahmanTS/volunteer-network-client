@@ -44,7 +44,7 @@ const Register = () => {
     const [selectedDate, setSelectedDate] = useState({ date: new Date() });
 
     useEffect(() => {
-        fetch('http://localhost:5000/volunteerItems')
+        fetch('https://fast-citadel-35366.herokuapp.com/volunteerItems')
         .then(res => res.json())
         .then(data => {
             const volunteerItem = data.find(item => item.title === volunteerName.volunteerName)
@@ -61,7 +61,7 @@ const Register = () => {
     const hendelSubmit = (event) => {
         const newRegister = { ...loggedinUser, ...selectedDate, ...volunteerItem };
         console.log(newRegister);
-        fetch('http://localhost:5000/addRegisterInfo', {
+        fetch('https://fast-citadel-35366.herokuapp.com/addRegisterInfo', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(newRegister)

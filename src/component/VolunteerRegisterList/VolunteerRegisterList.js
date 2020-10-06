@@ -44,7 +44,7 @@ const VolunteerRegisterList = () => {
     const [volunteerList, setVolunteerList] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/registerInfo')
+        fetch('https://fast-citadel-35366.herokuapp.com/registerInfo')
         .then(res => res.json())
         .then(data => {
             setVolunteerList(data);
@@ -52,13 +52,13 @@ const VolunteerRegisterList = () => {
     }, [])
 
     function cancelRegister(id) {
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://fast-citadel-35366.herokuapp.com/delete/${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())
         .then(result => {
             if (result) {
-                fetch('http://localhost:5000/registerInfo')
+                fetch('https://fast-citadel-35366.herokuapp.com/registerInfo')
                 .then(res => res.json())
                 .then(data => setVolunteerList(data))
             }

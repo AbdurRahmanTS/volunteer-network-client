@@ -61,22 +61,24 @@ const AddEvent = () => {
         setSelectedDate(newDate);
     };
 
-    const volunteerItem = (e) => {
-        const titleValue = (e.target.value);
+    const volunteerItem = (event) => {
+        const titleValue = (event.target.value);
         const title = { title: titleValue };
         setVolunteerItems(title);
-        e.preventDefault();
+        event.preventDefault();
     }
 
     const addVolunteerItem = (event) => {
         const newVolunteerItem = { ...volunteerItems };
-        fetch('http://localhost:5000/addVolunteerItems', {
+        fetch('https://fast-citadel-35366.herokuapp.com/addVolunteerItems', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(newVolunteerItem)
         })
         .then(res => res.json())
-        .then(data => { })
+        .then(data => {
+            alert('Event added successfully')
+        })
         event.preventDefault();
     }
 

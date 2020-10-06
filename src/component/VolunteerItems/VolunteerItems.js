@@ -24,7 +24,7 @@ const VolunteerItems = () => {
     const [volunteerItems, setVolunteerItems] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/volunteerItems')
+        fetch('https://fast-citadel-35366.herokuapp.com/volunteerItems')
         .then(res => res.json())
         .then(data => setVolunteerItems(data))
     }, [])
