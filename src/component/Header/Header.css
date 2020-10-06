@@ -1,0 +1,12 @@
+.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu li {
+    float: left;
+    padding: 20px;
+    margin-left: 80px;
+    color: #000;
+    cursor: pointer;
+}
