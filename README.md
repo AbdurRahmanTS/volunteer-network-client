@@ -13,7 +13,7 @@ MongoDB<br />
 React Router<br />
 HTML5<br />
 CSS3<br />
-Material UI.
+Material UI
 
 
 [Volunteer Network Live Site](https://volunteer-network-fedf5.web.app/)
