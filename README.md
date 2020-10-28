@@ -4,7 +4,7 @@ Admin can add a Volunteer service event.<br />
 Users can register for volunteer service.<br />
 Admin can delete any registered event.
 
-**Technology:** <br /><br />
+**Technology:** <br />
 React.js<br />
 Node.js<br />
 Heroku<br />
