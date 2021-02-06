@@ -41,9 +41,9 @@ const Header = () => {
               <Typography variant="h6" className={classes.title}>
                 <ul className={'menu'}>
                   <Link to='/home'><li>Home</li></Link>
-                  <Link><li>Donation</li></Link>
+                  <Link to='/'><li>Donation</li></Link>
                   <Link to='/events'><li>Events</li></Link>
-                  <Link><li>Blog</li></Link>
+                  <Link to='/'><li>Blog</li></Link>
                 </ul>
               </Typography>
               {
@@ -53,7 +53,7 @@ const Header = () => {
                     <Button variant="contained" color="primary">Register</Button>
                   )
               }
-              <Link to='/volunteerregisterlist'>
+              <Link to='/volunteerregisterlist' style={{ textDecoration: 'none' }}>
                 <Button
                   variant="contained"
                   style={{

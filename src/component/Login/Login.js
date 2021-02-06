@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import GoogleIcon from '../../logos/google.png';
-import firebaseConfig from './firebaseConfig/firebase.config';
+import firebaseConfig from './firebaseConfig/firebase.config.js';
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import { UserContext } from '../../App';

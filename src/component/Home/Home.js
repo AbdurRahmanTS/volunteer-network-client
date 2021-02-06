@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 import Header from '../Header/Header';
-import { Button, Container } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 import VolunteerItems from '../VolunteerItems/VolunteerItems';
 
 
@@ -32,6 +32,12 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
     const classes = useStyles();
+    const [search, setSearch] = useState("");
+
+    const handleInput = e => {
+        setSearch(e.target.value);
+    }
+
 
     return (
         <>
@@ -39,16 +45,16 @@ const Home = () => {
             <React.Fragment>
                 <Container>
                     <h1 style={{ textTransform: 'uppercase', marginTop: '60px', textAlign: 'center' }}>I grow by helping people in need.</h1>
-                    <Paper component="form" className={classes.root}>
+                    <Paper component="form" className={classes.root} id="myForm">
                         <InputBase
                             className={classes.input}
                             placeholder="Search..."
+                            onChange= {handleInput}
                         />
-                        <Button variant="contained" color="primary">Search</Button>
                     </Paper>
                 </Container>
             </React.Fragment>
-            <VolunteerItems />
+            <VolunteerItems search = {search} />
         </>
     );
 };

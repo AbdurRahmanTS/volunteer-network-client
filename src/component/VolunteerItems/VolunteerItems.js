@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 });
 
 
-const VolunteerItems = () => {
+const VolunteerItems = ({search}) => {
     const classes = useStyles();
     const [volunteerItems, setVolunteerItems] = useState([])
 
@@ -33,7 +33,9 @@ const VolunteerItems = () => {
             <Container style={{ marginTop: '70px' }}>
                 <Grid container spacing={3}>
                     {
-                        volunteerItems.map(data => (
+                        volunteerItems.filter(item => {
+                            return item.title.toLowerCase().includes(search.toLowerCase()) 
+                        }).map(data => (
                             <Grid key={data._id} item xs={3}>
                                 <Link style={{ textDecoration: 'none' }} to={/register/ + data.title}>
                                     <Card className={classes.root}>
